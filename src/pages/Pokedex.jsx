@@ -90,7 +90,7 @@ function Pokedex() {
       </section>
       {/* section of Pokemons*/}
 
-      <section className="px-2 grid gap-6 grid-cols-2 sm:grid-cols-4">
+      <section className="px-6 md:px-12 py-12 grid gap-6 auto-rows-auto grid-cols-[repeat(auto-fill,_minmax(220px,_260px))] justify-center">
         {pokemonsByName.map((pokemon) => (
           <PokemonCard key={pokemon.url} pokemonUrl={pokemon.url} />
         ))}

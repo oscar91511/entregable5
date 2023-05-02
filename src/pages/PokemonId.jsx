@@ -9,13 +9,18 @@ const PokemonId = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    const URL = `https:://pokeapi.co/api/v2/pokemon/${id}/`;
+    const URL = `https://pokeapi.co/api/v2/pokemon/${id}/`;
 
     axios
       .get(URL)
       .then((res) => setPokemon(res.data))
       .catch((err) => console.log(err));
   }, []);
+
+  const getPercentStatBar = (stat_base) => {
+    const percentBarProgres = Math.floor((stat_base * 100)/255)
+    return `${percentBarProgres}%`
+  }
 
   return (
     <section>
@@ -32,15 +37,17 @@ const PokemonId = () => {
 
             <section>
             {
-                pokemon.stat.map(stat => (
-                    <article>
-                        <section>
-                            <h5>{stat.stat.name}</h5>
+                pokemon?.stats.map(stat => (
+                    <article key={stat.stat.name}>
+                        <section  className="flex justify-between">
+                            <h5 className="capitalize">{stat.stat.name}</h5>
 
-                            <span>{stat.base_stat}/150</span>
-
-                            <div></div>
+                            <span>{stat.base_stat}/255</span>
                         </section>
+
+                            <div className="bg-gray-100 h-6 rounded-sm">
+                            <div style={{"width":getPercentStatBar(stat.base_stat)}} className="h-full  bg-gradient-to-r bg-yellow-300 to-blue-500"></div>
+                            </div>
                     </article>
                 ))
             }
