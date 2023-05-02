@@ -1,5 +1,6 @@
 import axios from "axios"
 import React, { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 
 const bordersByType = {
@@ -52,9 +53,9 @@ const PokemonCard = ({pokemonUrl}) => {
     
   }, [])
   
-
+  
   return (
-    <article className={`text-center border-8 rounded-[16px] shadow-xl ${bordersByType[pokemon?.types[0].type.name]}`}>
+    <Link to={`/pokedex/${pokemon?.id}`} className={`text-center border-8 rounded-[16px] shadow-xl ${bordersByType[pokemon?.types[0].type.name]}`}>
 
       {/* Header */}
 
@@ -90,7 +91,7 @@ const PokemonCard = ({pokemonUrl}) => {
         </section>
       </section>
 
-    </article>
+    </Link>
   )
 }
 

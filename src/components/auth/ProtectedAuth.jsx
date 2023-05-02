@@ -13,4 +13,4 @@ const ProtectedAuth = () => {
 
 }
 
-export default ProtectedAuth
+export default ProtectedAuth
