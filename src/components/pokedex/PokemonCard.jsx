@@ -54,15 +54,15 @@ const PokemonCard = ({pokemonUrl}) => {
   
 
   return (
-    <article className={`text-center border-8 rounded-[14px] shadow-xl ${bordersByType[pokemon?.types[0].type.name]}`}>
+    <article className={`text-center border-8 rounded-[16px] shadow-xl ${bordersByType[pokemon?.types[0].type.name]}`}>
 
       {/* Header */}
 
       <section className={`rounded-t-[5px] relative h-[150px] ${backgroundByType[pokemon?.types[0].type.name] } `}>
-        <div className="absolute  w-[200px] -bottom-15 left-1/2 -translate-x-1/2">
-          <img src={pokemon?.sprites.other["official-artwork"].
-          front_default} alt="" />
+        <div className="absolute w-[200px] -bottom-15 left-1/2 -translate-x-1/2 first-letter">
+          <img className="pokemon-image hover:animate-waving-hand" src={pokemon?.sprites.other["official-artwork"].front_default} alt="" />
         </div>
+
       </section>
 
       {/* Footer */}
@@ -82,8 +82,8 @@ const PokemonCard = ({pokemonUrl}) => {
           {
             pokemon?.stats.map(stat => (
              <div key={stat.stat.name}>
-              <h5 className="uppercase text-gray-400 font-semibold text-xs">{stat.stat.name}</h5>
-              <span className={`font-semibold ${SkillColorByType[pokemon?.types[0].type.name]}`}>{stat.base_stat}</span>
+              <h5 className="uppercase text-gray-400 font-semibold text-xs ">{stat.stat.name}</h5>
+              <span className={`font-semibold  ${SkillColorByType[pokemon?.types[0].type.name]}`}>{stat.base_stat}</span>
              </div>
             ))
           }
