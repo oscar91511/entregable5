@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Pokedex from './pages/Pokedex'
 import ProtectedAuth from './ProtectedAuth'
 
+
 function App() {
   
 
