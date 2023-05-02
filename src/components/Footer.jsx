@@ -1,12 +1,10 @@
-import React from 'react'
-
 const Footer = () => {
   return (
     <section className="relative">
-        <div className="h-20 bg_red-600"></div>
-        <div className="h-14 bg_black"></div>
+        <div className="h-20 bg-red-600"></div>
+        <div className="h-14 bg-black"></div>
 
-        <div className="h-20 apsolute aspect-square rounded-full
+        <div className="h-20 absolute aspect-square rounded-full
          bg-white border-[8px] border-black bottom-0 left-1/2
           -translate-x-1/2 after:content-[''] after:h-12 after:aspect-square
            after:rounded-full after:bg-gray-700 after:absolute after:border-[8px]

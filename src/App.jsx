@@ -2,6 +2,8 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import Home from './pages/Home'
+import Pokedex from './pages/Pokedex'
+import ProtectedAuth from './ProtectedAuth'
 
 function App() {
   
@@ -10,6 +12,13 @@ function App() {
     <section>
       <Routes>
         <Route path='/' element={<Home />} />
+
+          <Route element={<ProtectedAuth />}>
+
+            <Route path='/pokedex' element={<Pokedex />}/>
+            
+          </Route>
+        
       </Routes>
     </section>
   )
