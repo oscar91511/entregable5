@@ -61,7 +61,7 @@ function Pokedex() {
   }, [currentType])
 
   return (
-    <section className="min-h-screen ">
+    <section className="min-h-screen mx-auto ">
       <Header />
 
       {/* Section of filter and greeting */}
@@ -90,7 +90,7 @@ function Pokedex() {
       </section>
       {/* section of Pokemons*/}
 
-      <section className="px-2 grid gap-6 grid-cols-2 sm:grid-cols-3">
+      <section className="px-2 grid gap-6 grid-cols-2 sm:grid-cols-4">
         {pokemonsByName.map((pokemon) => (
           <PokemonCard key={pokemon.url} pokemonUrl={pokemon.url} />
         ))}
