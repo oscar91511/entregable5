@@ -9,6 +9,7 @@ function Pokedex() {
   const [pokemonName, setpokemonName] = useState("");
   const [types, setTypes] = useState([]);
   const [currentType, setCurrentType] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
 
   const nameTrainer = useSelector((store) => store.nameTrainer);
 
@@ -20,6 +21,34 @@ function Pokedex() {
   const pokemonsByName = pokemons.filter((pokemon) =>
     pokemon.name.toLowerCase().includes(pokemonName.toLowerCase())
   );
+
+  const pagination = () => {
+    // pokemons per page
+    const POKEMONS_PER_PAGE = 20
+
+    // pokemos on first page
+    const sliceStart = (currentPage - 1) * POKEMONS_PER_PAGE
+    const sliceEnd = sliceStart + POKEMONS_PER_PAGE
+    const pokemonsInPage = pokemonsByName.slice(sliceStart, sliceEnd)
+    
+    // End Page
+    const lastPage = Math.ceil(pokemonsByName.length / POKEMONS_PER_PAGE) || 1
+
+    //current Block
+    const PAGES_PER_BLOCK = 5
+    const actualBlock = math.ceil(currentPage / PAGES_PER_BLOCK)
+
+    // pages on current block
+
+    const pagesInBlock = []
+    const minPage = (actualBlock -1) * PAGES_PER_BLOCK + 1
+    const maxPage = actualBlock * PAGES_PER_BLOCK
+    for(let i = minPage; i < maxPage; i++){
+      if(i <= lastPage ){
+         pagesInBlock.push(i)
+      }
+    }
+  }
 
   useEffect(() => {
     if(!currentType){
