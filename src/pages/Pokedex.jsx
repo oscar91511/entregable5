@@ -61,14 +61,14 @@ function Pokedex() {
   }, [currentType])
 
   return (
-    <section className="min-h-screen mx-auto bg-bottom   drop-shadow-3xl">
+    <section className="min-h-screen mx-auto bg-bottom  drop-shadow-3xl">
       <Header />
 
       {/* Section of filter and greeting */}
-      <section className="py-4 px-2 drop-shadow-xl   mx-auto flex flex-col md:flex-row justify-between items-center">
+      <section className="py-4 drop-shadow-xl   mx-auto flex flex-col md:flex-row justify-between items-center">
         <h3 className="py-4 px-4 font-bold text-red-600">Welcome {nameTrainer}, <span className="text-black font-semibold">here you can find your Favorite Pokemon</span> </h3>
 
-        <form onSubmit={handleSubmit} className="flex mx-auto">
+        <form onSubmit={handleSubmit} className="flex p-4 mx-auto">
           <div className="flex">
             <input
               className="shadow-xl rounded-sm px-2 py-2 sm:w-64"
@@ -76,18 +76,18 @@ function Pokedex() {
               type="text"
               placeholder="Search your Pokemon"
             />
-            <button className=" bg-red-600 text-white px-4 py-2  inline-block rounded-sm">Search</button>
+            <button className=" bg-red-600 text-white py-2 w-16 inline-block rounded-sm">Search</button>
           </div>
 
           <select
-            className="capitalize hover:bg-red-600 hover:text-white ml-4 rounded-sm"
+            className="capitalize hover:bg-red-600 hover:text-white ml-2 rounded-sm"
             onChange={(e) => setCurrentType(e.target.value)}
           >
             <option 
              value="">All</option>
             {types.map((type) => (
-              <option value={type} key={type} className="capitalize hover:bg-red-600 hover:text-white">
-               <span className="text-black hover:text-white">{type}</span>
+              <option value={type} key={type} className="capitalize hover:bg-red-600  hover:text-white">
+               <span className="text-black hover:text-white ">{type}</span>
               </option>
             ))}
           </select>
