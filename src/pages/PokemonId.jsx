@@ -53,13 +53,13 @@ const PokemonId = () => {
     <section>
       <Header />
 
-      <section className=" px-20 md:px-[400px] py-28  gap-6  grid-col-[repeat(auto-fill,_minmax(200px,_360px))] justify-center">
+      <section className=" px-20 md:px-[400px] py-28  gap-6  grid-col-[repeat(auto-fill,_minmax(200px,_360px))] justify-center ">
        
-        <article className="max-w-[900px] mx-auto">
+        <article className="max-w-[768px] mx-auto shadow-2xl p-4 pb-6 rounded-xl">
           {/* section superior */}
 
           <section
-            className={`rounded-t-[5px] relative h-[80px]  ${
+            className={`rounded-t-[5px] relative w-full h-[80px]  ${
               backgroundByType[pokemon?.types[0].type.name]
             } `}
           >
@@ -91,14 +91,14 @@ const PokemonId = () => {
               <div className="flex justify-center gap-6 text-center">
                 <div>
                   <div>
-                    <h5>Weigth</h5>
+                    <h5 className="text-sm">Weigth</h5>
                     <span className={`font-semibold  ${SkillColorByType[pokemon?.types[0].type.name]}`}>{pokemon?.weight}</span>
                   </div>
                 </div>
 
                 <div>
                   <div>
-                    <h5>Height</h5>
+                    <h5 className="text-sm">Height</h5>
                     <span className={`font-semibold  ${SkillColorByType[pokemon?.types[0].type.name]}`}>{pokemon?.height}</span>
                   </div>
                 </div>
@@ -110,7 +110,7 @@ const PokemonId = () => {
 
                 <section className="text-center">
 
-                  <h3>Types</h3>
+                  <h3 className="text-xl font-semibold">Types</h3>
 
                   <section  className="grid grid-cols-2 gap-4 mt-4">
                     {
@@ -126,13 +126,13 @@ const PokemonId = () => {
 
                 <section className="text-center">
 
-                  <h3>Abilities</h3>
+                  <h3 className="text-xl font-semibold">Abilities</h3>
 
                   <section  className="grid grid-cols-2 gap-4 mt-4">
                     {
                       pokemon?.abilities.map(ability => <article key={ability.ability.name}
                       className="p-2 px-8 border-[1px] border-gray-300 text-center
-                      capitalize">{ability.ability.name}</article>)
+                      capitalize truncate">{ability.ability.name}</article>)
                     }
                   </section>
                 </section>
