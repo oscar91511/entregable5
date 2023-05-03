@@ -65,7 +65,7 @@ const PokemonId = () => {
           >
             <div className="flex justify-center items-center h-full">
               <img
-                className="absoluten grid-col-[repeat(auto-fill,_minmax(250px,_360px))] justify-center -translate-y-10 sm:px-[60px] w-[45%]"
+                className="absoluten grid-col-[repeat(auto-fill,_minmax(250px,_360px))] justify-center -translate-y-10 sm:px-[60px] w-[30%]"
                 src={
                   pokemon?.sprites.versions["generation-v"]["black-white"]
                     .animated.front_default
@@ -77,7 +77,7 @@ const PokemonId = () => {
 
           {/* info General */}
 
-          <section>
+          <section className="pt-[40px]">
             <div className="text-center py-4">
               <h3>#{pokemon?.id}</h3>
             </div>
@@ -115,7 +115,7 @@ const PokemonId = () => {
                   <section  className="grid grid-cols-2 gap-4 mt-4">
                     {
                       pokemon?.types.map( type =>  <article key={type.type.name} className={`p-2
-                       px-8 border-[1px] text-white border-gray-300 text-center
+                       px-8 border-[1px] text-black font-bold border-gray-300 text-center
                         capitalize rounded-md ${backgroundByType[pokemon?.types[0].type.name]}`}>{type.type.name}</article>)
                     }
                   </section>
@@ -131,7 +131,7 @@ const PokemonId = () => {
                   <section  className="grid grid-cols-2 gap-4 mt-4">
                     {
                       pokemon?.abilities.map(ability => <article key={ability.ability.name}
-                      className={`p-2 text-white px-8 border-[1px] border-gray-300 text-center
+                      className={`p-2 text-black font-bold px-8 border-[1px] border-gray-300 text-center
                       capitalize truncate rounded-md ${backgroundByType[pokemon?.types[0].type.name]} `} >{ability.ability.name}</article>)
                     }
                   </section>

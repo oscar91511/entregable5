@@ -54,6 +54,20 @@ function Pokedex() {
 
   const {lastPage, pokemonInPage, pagesInBlock} = paginationLogic()
 
+  const handleClickPreviusPage = () => {
+    const newCurrentPage = currentPage - 1
+    if( newCurrentPage >= 1){
+      setCurrentPage( newCurrentPage)
+    }
+  }
+
+  const handleClickNextPage = () => {
+    const newCurrentPage = currentPage + 1
+    if(newCurrentPage <= lastPage){
+      setCurrentPage(newCurrentPage)
+    }
+  }
+
   useEffect(() => {
     if(!currentType){
       const URL = "https://pokeapi.co/api/v2/pokemon?limit=1281";
@@ -131,13 +145,17 @@ function Pokedex() {
       </section>
 
           {/* pagination */}
-          <ul className="flex pb-4 gap-2 justify-center ">
-            <li>{"<"}</li>
+          <ul className="flex pb-4 gap-2 justify-center px-2 flex-wrap">
+            <li onClick={handleClickPreviusPage} className="p-3 bg-red-600 font-bold
+              text-white rounded-md cursor-pointer">{"<"}</li>
             {
-              pagesInBlock.map(numberPage => <li onClick={() => setCurrentPage(numberPage)} className="p-3 bg-red-600 font-bold
-              text-white rounded-md cursor-pointer" key={numberPage}>{numberPage}</li> )
+              pagesInBlock.map(numberPage => <li onClick={() => setCurrentPage(numberPage)} 
+              className={`p-3 bg-red-600 font-bold text-white rounded-md cursor-pointer
+               ${ numberPage === currentPage && "bg-red-400"}`}
+               key={numberPage}>{numberPage}</li> )
             }
-            <li>{">"}</li>
+            <li onClick={handleClickNextPage} className="p-3 bg-red-600 font-bold
+              text-white rounded-md cursor-pointer">{">"}</li>
           </ul>
 
     </section>
