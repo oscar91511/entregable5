@@ -53,11 +53,12 @@ const PokemonId = () => {
     <section>
       <Header />
 
-      <section className=" px-20 md:px-[400px] py-28  gap-6  grid-col-[repeat(auto-fill,_minmax(200px,_360px))] justify-center ">
+      <section className=" px-20 md:px-[400px] py-28  gap-6  grid-col-[repeat(auto-fill,_minmax(200px,_360px))]
+       bg-[url('/images/stadium.jpg')] bg-cover bg-no-repeat justify-center ">
        
-        <article className="max-w-[768px] mx-auto shadow-2xl p-4 pb-6 rounded-xl">
+        <article className="max-w-[768px] mx-auto  drop-shadow-3xl p-4 pb-6 rounded-xl bg-white ">
           {/* section superior */}
-
+          
           <section
             className={`rounded-t-[5px] relative w-full h-[80px]  ${
               backgroundByType[pokemon?.types[0].type.name]
@@ -78,7 +79,7 @@ const PokemonId = () => {
           {/* info General */}
 
           <section>
-            <div>
+            <div className="text-center py-4">
               <h3>#{pokemon?.id}</h3>
             </div>
 

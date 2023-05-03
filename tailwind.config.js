@@ -6,6 +6,16 @@ export default {
   ],
   theme: {
     extend: {
+      dropShadow: {
+        '3xl': '5px 5px 10px rgba(0, 0, 0, 0.6)', // aumenta el valor del canal alfa y agrega desplazamiento
+        '4xl': [
+          '5px 5px 10px rgba(0, 0, 0, 0.6)',
+          '10px 10px 30px rgba(0, 0, 0, 0.3)' // aumenta el valor del canal alfa y agrega desplazamiento
+        ]
+      },
+      
+      
+
       colors: {
         normal: "rgba(115, 82, 89, 1)"
       },
