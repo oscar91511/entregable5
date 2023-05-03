@@ -22,21 +22,21 @@ function Pokedex() {
     pokemon.name.toLowerCase().includes(pokemonName.toLowerCase())
   );
 
-  const pagination = () => {
+  const paginationLogic = () => {
     // pokemons per page
     const POKEMONS_PER_PAGE = 20
 
     // pokemos on first page
     const sliceStart = (currentPage - 1) * POKEMONS_PER_PAGE
     const sliceEnd = sliceStart + POKEMONS_PER_PAGE
-    const pokemonsInPage = pokemonsByName.slice(sliceStart, sliceEnd)
+    const pokemonInPage = pokemonsByName.slice(sliceStart, sliceEnd)
     
     // End Page
     const lastPage = Math.ceil(pokemonsByName.length / POKEMONS_PER_PAGE) || 1
 
     //current Block
     const PAGES_PER_BLOCK = 5
-    const actualBlock = math.ceil(currentPage / PAGES_PER_BLOCK)
+    const actualBlock = Math.ceil(currentPage / PAGES_PER_BLOCK)
 
     // pages on current block
 
@@ -48,11 +48,14 @@ function Pokedex() {
          pagesInBlock.push(i)
       }
     }
+    return {pokemonInPage, lastPage, pagesInBlock}
   }
+
+  const {lastPage, pokemonInPage, pagesInBlock} = paginationLogic()
 
   useEffect(() => {
     if(!currentType){
-      const URL = "https://pokeapi.co/api/v2/pokemon";
+      const URL = "https://pokeapi.co/api/v2/pokemon?limit=1281";
 
       axios
         .get(URL)
@@ -97,26 +100,22 @@ function Pokedex() {
       <section className="py-4 drop-shadow-xl   mx-auto flex flex-col md:flex-row justify-between items-center">
         <h3 className="py-4 px-4 font-bold text-red-600">Welcome {nameTrainer}, <span className="text-black font-semibold">here you can find your Favorite Pokemon</span> </h3>
 
-        <form onSubmit={handleSubmit} className="flex p-4 mx-auto">
-          <div className="flex">
+        <form onSubmit={handleSubmit} className="flex p-4 mx-auto gap-2 ">
+          <div className="flex ">
             <input
-              className="shadow-xl rounded-sm font-semibold w-40 sm:w-64 truncate"
+              className="shadow-xl rounded-sm font-semibold w-[80%] sm:w-64 truncate  "
               id="pokemonName"
               type="text"
               placeholder=" Search your Pokemon" rel="noopener noreferrer"
             />
-            <button className=" bg-red-600 text-white py-2 w-16 inline-block rounded-sm">Search</button>
+            <button className=" bg-red-600 text-white py-2 w-14 inline-block text-sm rounded-sm">Search</button>
           </div>
 
-          <select
-            className="capitalize hover:bg-red-600 hover:text-white ml-2 rounded-sm"
-            onChange={(e) => setCurrentType(e.target.value)}
-          >
-            <option 
-             value="">All</option>
+          <select className="w-12 rounded-sm text-sm cursor-pointer hover:bg-red-600" onChange={(e) => setCurrentType(e.target.value)}>
+            <option className="" value="">All</option>
             {types.map((type) => (
-              <option value={type} key={type} className="capitalize hover:bg-red-600  hover:text-white">
-               <span className="text-black hover:text-white ">{type}</span>
+              <option className="capitalize" value={type} key={type}>
+                {type}
               </option>
             ))}
           </select>
@@ -125,7 +124,7 @@ function Pokedex() {
       {/* section of Pokemons*/}
 
       <section className="px-6 md:px-12 py-12 grid gap-6 auto-rows-auto grid-cols-[repeat(auto-fill,_minmax(220px,_260px))] justify-center ">
-        {pokemonsByName.map((pokemon) => (
+        {pokemonInPage.map((pokemon) => (
           <PokemonCard key={pokemon.url} pokemonUrl={pokemon.url} />
         ))}
       </section>

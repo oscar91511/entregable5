@@ -17,7 +17,7 @@ const Home = () => {
   return (
     
     
-    <section className="min-h-screen grid bg-cover bg-no-repeat bg-bottom bg-[url('/images/menu_pokemon.jpg')] grid-rows-[1fr_auto]">
+    <section className="min-h-screen  grid bg-cover bg-no-repeat bg-bottom bg-[url('/images/menu_pokemon.jpg')] grid-rows-[1fr_auto]">
       {/* Header */}
      
       
@@ -26,8 +26,8 @@ const Home = () => {
           <div>
             <img src="/images/pokedex.png" alt="" className="relative gap-6 md:px-12 sm:w-[900px] w-full py-8 items-center justify-center" />
           </div>
-          <h2 className="text-4xl text-red-500 flex font-bold items-center justify-center pb-2 ">¡Hello trainer!</h2>
-          <p className="flex justify-center items-center pb-5">Give me your name to start! :</p>
+          <h2 className=" text-2xl sm:text-4xl text-red-500 flex font-bold items-center justify-center pb-2 ">¡Hello trainer!</h2>
+          <p className="flex justify-center font-semibold text-sm sm:text-3xl items-center pb-5">Give me your name to start!</p>
           <form onSubmit={handleSubmit} className="flex gap-4">
             <input id="nameTrainer" type="text" placeholder="Your name ... " className="w-full border border-gray-300 px-2 py-1 focus:outline-none 
             focus:ring-2 focus:ring-red-500" rel="noopener noreferrer" />

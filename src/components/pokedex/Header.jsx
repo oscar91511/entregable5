@@ -12,7 +12,7 @@ const Header = () => {
 
         <div className="h-20 absolute aspect-square rounded-full
          bg-white border-[8px] border-black -bottom-4 right-0
-          -translate-x-1/2 after:content-[''] after:h-12 after:aspect-square
+          -translate-x-1/1 after:content-[''] after:h-12 after:aspect-square
            after:rounded-full after:bg-gray-700 after:absolute after:border-[8px]
             after:border-black after:top-1/2 after:left-1/2
             after:-translate-x-1/2 after:-translate-y-1/2 "></div>
