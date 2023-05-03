@@ -74,7 +74,7 @@ function Pokedex() {
               className="shadow-xl rounded-sm font-semibold w-40 sm:w-64 truncate"
               id="pokemonName"
               type="text"
-              placeholder=" Search your Pokemon"
+              placeholder=" Search your Pokemon" rel="noopener noreferrer"
             />
             <button className=" bg-red-600 text-white py-2 w-16 inline-block rounded-sm">Search</button>
           </div>

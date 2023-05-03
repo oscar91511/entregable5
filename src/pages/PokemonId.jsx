@@ -71,7 +71,7 @@ const PokemonId = () => {
                   pokemon?.sprites.versions["generation-v"]["black-white"]
                     .animated.front_default
                 }
-                alt=""
+                alt="" rel="noopener noreferrer"
               />
             </div>
           </section>
