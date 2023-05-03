@@ -61,14 +61,14 @@ function Pokedex() {
   }, [currentType])
 
   return (
-    <section className="min-h-screen mx-auto bg-bottom bg-[url('/images/menu_pokemon.jpg')] bg-cover bg-no-repeat drop-shadow-3xl">
+    <section className="min-h-screen mx-auto bg-bottom   drop-shadow-3xl">
       <Header />
 
       {/* Section of filter and greeting */}
       <section className="py-4 px-2 drop-shadow-xl   mx-auto flex flex-col md:flex-row justify-between items-center">
         <h3 className="py-4 px-4 font-bold text-red-600">Welcome {nameTrainer}, <span className="text-black font-semibold">here you can find your Favorite Pokemon</span> </h3>
 
-        <form onSubmit={handleSubmit} className="flex">
+        <form onSubmit={handleSubmit} className="flex mx-auto">
           <div className="flex">
             <input
               className="shadow-xl rounded-sm px-2 py-2 sm:w-64"
