@@ -15,7 +15,7 @@ const Home = () => {
         navigate("/pokedex")
     };
   return (
-    <section className="min-h-screen grid grid-rows-[1fr_auto]">
+    <section className="min-h-screen grid grid-rows-[1fr_auto]  drop-shadow-3xl">
       {/* Header */}
       <section>
         <article>

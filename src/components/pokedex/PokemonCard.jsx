@@ -55,7 +55,7 @@ const PokemonCard = ({pokemonUrl}) => {
   
   
   return (
-    <Link to={`/pokedex/${pokemon?.id}`} className={`text-center border-8 rounded-[16px] shadow-xl ${bordersByType[pokemon?.types[0].type.name]}`}>
+    <Link to={`/pokedex/${pokemon?.id}`} className={`text-center border-8 rounded-[16px] drop-shadow-3xl bg-white ${bordersByType[pokemon?.types[0].type.name]}`}>
 
       {/* Header */}
 

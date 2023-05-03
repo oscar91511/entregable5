@@ -61,28 +61,33 @@ function Pokedex() {
   }, [currentType])
 
   return (
-    <section className="min-h-screen mx-auto ">
+    <section className="min-h-screen mx-auto bg-[url('/images/pueblo_paleta.jpg')] bg-cover bg-no-repeat drop-shadow-3xl">
       <Header />
 
       {/* Section of filter and greeting */}
-      <section className="py-4 px-2">
-        <h3>Welcome {nameTrainer}, here you can find your Favorite Pokemon</h3>
+      <section className="py-4 px-2 drop-shadow-xl   mx-auto flex flex-col md:flex-row justify-between items-center">
+        <h3 className="py-4 px-4 font-bold text-red-600">Welcome {nameTrainer}, <span className="text-black font-semibold">here you can find your Favorite Pokemon</span> </h3>
 
-        <form onSubmit={handleSubmit}>
-          <div>
+        <form onSubmit={handleSubmit} className="flex">
+          <div className="flex">
             <input
+              className="shadow-xl rounded-sm px-2 py-2 sm:w-64"
               id="pokemonName"
               type="text"
               placeholder="Search your Pokemon"
             />
-            <button>Search</button>
+            <button className=" bg-red-600 text-white px-4 py-2  inline-block rounded-sm">Search</button>
           </div>
 
-          <select onChange={(e) => setCurrentType(e.target.value)}>
-            <option value="">All</option>
+          <select
+            className="capitalize hover:bg-red-600 hover:text-white ml-4 rounded-sm"
+            onChange={(e) => setCurrentType(e.target.value)}
+          >
+            <option 
+             value="">All</option>
             {types.map((type) => (
-              <option className="capitalize" value={type} key={type}>
-                {type}
+              <option value={type} key={type} className="capitalize hover:bg-red-600 hover:text-white">
+               <span className="text-black hover:text-white">{type}</span>
               </option>
             ))}
           </select>
@@ -90,7 +95,7 @@ function Pokedex() {
       </section>
       {/* section of Pokemons*/}
 
-      <section className="px-6 md:px-12 py-12 grid gap-6 auto-rows-auto grid-cols-[repeat(auto-fill,_minmax(220px,_260px))] justify-center">
+      <section className="px-6 md:px-12 py-12 grid gap-6 auto-rows-auto grid-cols-[repeat(auto-fill,_minmax(220px,_260px))] justify-center ">
         {pokemonsByName.map((pokemon) => (
           <PokemonCard key={pokemon.url} pokemonUrl={pokemon.url} />
         ))}
