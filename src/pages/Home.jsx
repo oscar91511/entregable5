@@ -36,7 +36,7 @@ const Home = () => {
         </article>
       </section>
         <section>
-        <footer className="flex gap-2 p-4 justify-center">
+        <footer className="flex gap-2 p-4 justify-center text-white drop-shadow-3xl ">
         <a
           className="text-4xl"
           target="_blank"
