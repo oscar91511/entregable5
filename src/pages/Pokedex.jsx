@@ -61,7 +61,7 @@ function Pokedex() {
   }, [currentType])
 
   return (
-    <section className="min-h-screen mx-auto bg-[url('/images/pueblo_paleta.jpg')] bg-cover bg-no-repeat drop-shadow-3xl">
+    <section className="min-h-screen mx-auto bg-bottom bg-[url('/images/menu_pokemon.jpg')] bg-cover bg-no-repeat drop-shadow-3xl">
       <Header />
 
       {/* Section of filter and greeting */}
