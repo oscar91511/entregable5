@@ -85,7 +85,7 @@ const PokemonId = () => {
 
             <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-2">
               <hr />
-              <h2 className={` capitalize font-bold ${nameColorByType[pokemon?.types[0].type.name]}`}>{pokemon?.name}</h2>
+              <h2 className={`capitalize font-bold ${nameColorByType[pokemon?.types[0].type.name]}`}>{pokemon?.name}</h2>
               <hr />
             </div>
 
