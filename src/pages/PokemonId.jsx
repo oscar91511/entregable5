@@ -30,22 +30,42 @@ const PokemonId = () => {
     normal: "bg-gradient-to-b from-normal to-pink-950/70",
   };
 
+  const nameColorByType = {
+    grass: "text-green-600",
+    fire: "text-orange-600",
+    bug: "text-green-700/80",
+    water: "text-blue-600",
+    electric: "text-yellow-600",
+    normal: " text-normal ",
+    
+  }
+  
+  const SkillColorByType = {
+    grass: "text-green-600",
+    fire: "text-orange-600",
+    bug: "text-green-700/80",
+    water: "text-blue-600",
+    electric: "text-yellow-600",
+    normal: "text-normal",
+  }
+
   return (
     <section>
       <Header />
 
-      <section className=" px-20 md:px-[400px] py-12  gap-6  grid-col-[repeat(auto-fill,_minmax(200px,_360px))] justify-center">
-        <article className="">
+      <section className=" px-20 md:px-[400px] py-28  gap-6  grid-col-[repeat(auto-fill,_minmax(200px,_360px))] justify-center">
+       
+        <article className="max-w-[900px] mx-auto">
           {/* section superior */}
 
           <section
-            className={`rounded-t-[5px] relative h-[120px] ${
+            className={`rounded-t-[5px] relative h-[80px]  ${
               backgroundByType[pokemon?.types[0].type.name]
             } `}
           >
             <div className="flex justify-center items-center h-full">
               <img
-                className="absoluten sm:px-[60px] w-[30%]"
+                className="absoluten grid-col-[repeat(auto-fill,_minmax(250px,_360px))] justify-center -translate-y-10 sm:px-[60px] w-[45%]"
                 src={
                   pokemon?.sprites.versions["generation-v"]["black-white"]
                     .animated.front_default
@@ -64,9 +84,60 @@ const PokemonId = () => {
 
             <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-2">
               <hr />
-              <h2 className="Capitalize font-bold">{pokemon?.name}</h2>
+              <h2 className={` capitalize font-bold ${nameColorByType[pokemon?.types[0].type.name]}`}>{pokemon?.name}</h2>
               <hr />
             </div>
+
+              <div className="flex justify-center gap-6 text-center">
+                <div>
+                  <div>
+                    <h5>Weigth</h5>
+                    <span className={`font-semibold  ${SkillColorByType[pokemon?.types[0].type.name]}`}>{pokemon?.weight}</span>
+                  </div>
+                </div>
+
+                <div>
+                  <div>
+                    <h5>Height</h5>
+                    <span className={`font-semibold  ${SkillColorByType[pokemon?.types[0].type.name]}`}>{pokemon?.height}</span>
+                  </div>
+                </div>
+              </div>
+
+
+              <section className="grid md:grid-cols-2 gap-4" >
+                  {/* types */}
+
+                <section className="text-center">
+
+                  <h3>Types</h3>
+
+                  <section  className="grid grid-cols-2 gap-4 mt-4">
+                    {
+                      pokemon?.types.map( type =>  <article key={type.type.name} className="p-2
+                       px-8 border-[1px] border-gray-300 text-center
+                        capitalize">{type.type.name}</article>)
+                    }
+                  </section>
+
+                </section>
+
+                  {/* abilityes */}
+
+                <section className="text-center">
+
+                  <h3>Abilities</h3>
+
+                  <section  className="grid grid-cols-2 gap-4 mt-4">
+                    {
+                      pokemon?.abilities.map(ability => <article key={ability.ability.name}
+                      className="p-2 px-8 border-[1px] border-gray-300 text-center
+                      capitalize">{ability.ability.name}</article>)
+                    }
+                  </section>
+                </section>
+              </section>
+
           </section>
 
           {/* section of stats */}
