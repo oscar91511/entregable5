@@ -53,10 +53,9 @@ const PokemonId = () => {
     <section>
       <Header />
 
-      <section className=" px-20 md:px-[400px] py-28  gap-6  grid-col-[repeat(auto-fill,_minmax(200px,_360px))]
-       bg-[url('/images/stadium.jpg')] bg-cover bg-no-repeat justify-center ">
+      <section className="px-2 py-14 bg-[url('/images/stadium.jpg')] bg-cover bg-no-repeat justify-center ">
        
-        <article className="max-w-[768px] mx-auto  drop-shadow-3xl p-4 pb-6 rounded-xl bg-white ">
+        <article className="max-w-[750px] mx-auto  drop-shadow-3xl p-4 pb-6 rounded-xl bg-white ">
           {/* section superior */}
           
           <section
@@ -115,9 +114,9 @@ const PokemonId = () => {
 
                   <section  className="grid grid-cols-2 gap-4 mt-4">
                     {
-                      pokemon?.types.map( type =>  <article key={type.type.name} className="p-2
-                       px-8 border-[1px] border-gray-300 text-center
-                        capitalize">{type.type.name}</article>)
+                      pokemon?.types.map( type =>  <article key={type.type.name} className={`p-2
+                       px-8 border-[1px] text-white border-gray-300 text-center
+                        capitalize rounded-md ${backgroundByType[pokemon?.types[0].type.name]}`}>{type.type.name}</article>)
                     }
                   </section>
 
@@ -132,8 +131,8 @@ const PokemonId = () => {
                   <section  className="grid grid-cols-2 gap-4 mt-4">
                     {
                       pokemon?.abilities.map(ability => <article key={ability.ability.name}
-                      className="p-2 px-8 border-[1px] border-gray-300 text-center
-                      capitalize truncate">{ability.ability.name}</article>)
+                      className={`p-2 text-white px-8 border-[1px] border-gray-300 text-center
+                      capitalize truncate rounded-md ${backgroundByType[pokemon?.types[0].type.name]} `} >{ability.ability.name}</article>)
                     }
                   </section>
                 </section>

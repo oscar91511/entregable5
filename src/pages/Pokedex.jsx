@@ -3,6 +3,7 @@ import Header from "../components/pokedex/Header";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import PokemonCard from "../components/pokedex/PokemonCard";
+import { list } from "postcss";
 
 function Pokedex() {
   const [pokemons, setPokemons] = useState([]);
@@ -128,6 +129,17 @@ function Pokedex() {
           <PokemonCard key={pokemon.url} pokemonUrl={pokemon.url} />
         ))}
       </section>
+
+          {/* pagination */}
+          <ul className="flex pb-4 gap-2 justify-center ">
+            <li>{"<"}</li>
+            {
+              pagesInBlock.map(numberPage => <li onClick={() => setCurrentPage(numberPage)} className="p-3 bg-red-600 font-bold
+              text-white rounded-md cursor-pointer" key={numberPage}>{numberPage}</li> )
+            }
+            <li>{">"}</li>
+          </ul>
+
     </section>
   );
 }
