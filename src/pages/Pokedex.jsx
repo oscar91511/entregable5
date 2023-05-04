@@ -145,8 +145,8 @@ function Pokedex() {
           </span>{" "}
         </h3>
 
-        <form onSubmit={handleSubmit} className="flex p-4 mx-auto gap-2 ">
-          <div className="flex ">
+        <form onSubmit={handleSubmit} className="flex  p-4 mx-auto gap-2 ">
+          <div className="flex border-solid hover:border-dotted ">
             <input ref={input}
               className="shadow-xl px-2 rounded-xl  w-[80%] sm:w-64 truncate  "
               id="pokemonName"
