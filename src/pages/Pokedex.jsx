@@ -1,16 +1,16 @@
 import { useSelector } from "react-redux";
 import Header from "../components/pokedex/Header";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import PokemonCard from "../components/pokedex/PokemonCard";
-import { list } from "postcss";
+
 
 function Pokedex() {
    //? Array by pokemons before filter
   const [pokemons, setPokemons] = useState([]);
 
   //? String filter pokemons by name
-  const [pokemonName, setpokemonName] = useState("");
+  const [pokemonName, setPokemonName] = useState("");
 
   //? Array for type of pokemons
   const [types, setTypes] = useState([]);
@@ -24,9 +24,11 @@ function Pokedex() {
   //? global state whit users names
   const nameTrainer = useSelector((store) => store.nameTrainer);
 
+  const input = useRef(null)
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    setpokemonName(e.target.pokemonName.value);
+    setPokemonName(e.target.pokemonName.value);
   };
 
   const pokemonsByName = pokemons.filter((pokemon) =>
@@ -122,6 +124,12 @@ function Pokedex() {
     setCurrentPage(1)
   
   }, [pokemonName, currentType])
+
+  useEffect(() => {
+    setPokemonName("")
+    input.current.value = ""
+  }, [currentType])
+  
   
 
   return (
@@ -139,20 +147,20 @@ function Pokedex() {
 
         <form onSubmit={handleSubmit} className="flex p-4 mx-auto gap-2 ">
           <div className="flex ">
-            <input
-              className="shadow-xl rounded-sm font-semibold w-[80%] sm:w-64 truncate  "
+            <input ref={input}
+              className="shadow-xl px-2 rounded-xl  w-[80%] sm:w-64 truncate  "
               id="pokemonName"
               type="text"
               placeholder=" Search your Pokemon"
               rel="noopener noreferrer"
             />
-            <button className=" bg-red-600 text-white py-2 w-14 inline-block text-sm rounded-sm">
+            <button className=" bg-red-600 hover:bg-red-500 text-white py-2 w-16 -translate-x-5 inline-block text-sm rounded-xl">
               Search
             </button>
           </div>
 
           <select
-            className="w-12 rounded-sm text-sm cursor-pointer hover:bg-red-600"
+            className="w-12 rounded-xl -translate-x-5 text-sm cursor-pointer hover:bg-red-600"
             onChange={(e) => setCurrentType(e.target.value)}
           >
             <option className="" value="">
