@@ -133,7 +133,7 @@ function Pokedex() {
   
 
   return (
-    <section className="min-h-screen mx-auto bg-bottom  drop-shadow-3xl">
+    <section className="min-h-screen mx-auto bg-bottom  shadow-2xl">
       <Header />
 
       {/* Section of filter and greeting */}
