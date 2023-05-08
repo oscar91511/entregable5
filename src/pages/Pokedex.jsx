@@ -133,11 +133,11 @@ function Pokedex() {
   
 
   return (
-    <section className="min-h-screen mx-auto bg-bottom shadow-2xl ">
+    <section className="min-h-screen mx-auto bg-bottom  ">
       <Header />
 
       {/* Section of filter and greeting */}
-      <section className="py-4   mx-auto flex flex-col md:flex-row justify-between items-center">
+      <section className="py-4 mx-auto flex flex-col md:flex-row justify-between items-center">
         <h3 className="py-4 px-4 font-bold text-red-600">
           Welcome {nameTrainer},{" "}
           <span className="text-black font-semibold">
@@ -145,22 +145,22 @@ function Pokedex() {
           </span>{" "}
         </h3>
 
-        <form onSubmit={handleSubmit} className="flex border-solid bg-black px-1 py-1 mx-auto rounded-xl gap-2 ">
-          <div className="flex border-solid hover:border-dotted  text-black ">
+        <form onSubmit={handleSubmit} className="flex p-4 mx-auto gap-2 ">
+          <div className="flex border-solid hover:border-dotted ">
             <input ref={input}
-              className=" px-2 rounded-xl border-solid w-[80%] sm:w-64 truncate  "
+              className="shadow-xl px-2 rounded-xl  w-[80%] sm:w-64 truncate  "
               id="pokemonName"
               type="text"
               placeholder=" Search your Pokemon"
               rel="noopener noreferrer"
             />
-            <button className=" bg-red-600 hover:bg-red-500 text-white py-2 w-16 -translate-x-5 inline-block text-sm rounded-xl ">
+            <button className=" bg-red-600 hover:bg-red-500 text-white py-2 w-16 -translate-x-5 inline-block text-sm rounded-xl shadow-xl">
               Search
             </button>
           </div>
 
           <select
-            className="w-12 rounded-xl border-black  -translate-x-5 text-sm cursor-pointer hover:bg-red-600"
+            className="w-12 shadow-xl rounded-xl -translate-x-5 text-sm cursor-pointer hover:bg-red-600"
             onChange={(e) => setCurrentType(e.target.value)}
           >
             <option className="" value="">
