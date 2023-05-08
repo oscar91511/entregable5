@@ -133,11 +133,11 @@ function Pokedex() {
   
 
   return (
-    <section className="min-h-screen mx-auto bg-bottom  shadow-2xl">
+    <section className="min-h-screen mx-auto bg-bottom  shadow-xl">
       <Header />
 
       {/* Section of filter and greeting */}
-      <section className="py-4 drop-shadow-xl   mx-auto flex flex-col md:flex-row justify-between items-center">
+      <section className="py-4 shadow-xl   mx-auto flex flex-col md:flex-row justify-between items-center">
         <h3 className="py-4 px-4 font-bold text-red-600">
           Welcome {nameTrainer},{" "}
           <span className="text-black font-semibold">
