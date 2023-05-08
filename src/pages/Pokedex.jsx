@@ -133,11 +133,11 @@ function Pokedex() {
   
 
   return (
-    <section className="min-h-screen mx-auto bg-bottom  shadow-xl">
+    <section className="min-h-screen mx-auto bg-bottom  ">
       <Header />
 
       {/* Section of filter and greeting */}
-      <section className="py-4 shadow-xl   mx-auto flex flex-col md:flex-row justify-between items-center">
+      <section className="py-4   mx-auto flex flex-col md:flex-row justify-between items-center">
         <h3 className="py-4 px-4 font-bold text-red-600">
           Welcome {nameTrainer},{" "}
           <span className="text-black font-semibold">
@@ -148,13 +148,13 @@ function Pokedex() {
         <form onSubmit={handleSubmit} className="flex  p-4 mx-auto gap-2 ">
           <div className="flex border-solid hover:border-dotted ">
             <input ref={input}
-              className="shadow-xl px-2 rounded-xl  w-[80%] sm:w-64 truncate  "
+              className=" px-2 rounded-xl  w-[80%] sm:w-64 truncate  "
               id="pokemonName"
               type="text"
               placeholder=" Search your Pokemon"
               rel="noopener noreferrer"
             />
-            <button className=" bg-red-600 hover:bg-red-500 text-white py-2 w-16 -translate-x-5 inline-block text-sm rounded-xl">
+            <button className=" bg-red-600 hover:bg-red-500 text-white py-2 w-16 -translate-x-5 inline-block text-sm ">
               Search
             </button>
           </div>

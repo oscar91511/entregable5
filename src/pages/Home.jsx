@@ -22,7 +22,7 @@ const Home = () => {
      
       
       <section className="flex flex-col   items-center justify-center gap-4 max-w-[960px] mx-auto px-4">
-        <article className="w-full px-12 shadow-xl ">
+        <article className="w-full px-12  ">
           <div>
             <img src="/images/pokedex.png" alt="" className="relative gap-6 md:px-12 sm:w-[900px] w-full py-8 items-center justify-center" />
           </div>
@@ -36,7 +36,7 @@ const Home = () => {
         </article>
       </section>
         <section>
-        <footer className="flex gap-2 p-4 justify-center text-white shadow-xl ">
+        <footer className="flex gap-2 p-4 justify-center text-white ">
         <a
           className="text-4xl"
           target="_blank"

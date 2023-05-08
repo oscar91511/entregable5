@@ -98,7 +98,7 @@ const PokemonId = () => {
       <Header />
 
       <section className="px-2 py-14 bg-[url('/images/stadium.jpg')] bg-cover bg-no-repeat justify-center ">
-        <article className="max-w-[750px] mx-auto  shadow-xl p-4 pb-6 rounded-xl bg-white ">
+        <article className="max-w-[750px] mx-auto  p-4 pb-6 rounded-xl bg-white ">
           {/* section superior */}
 
           <section
